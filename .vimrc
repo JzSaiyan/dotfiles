@@ -1,3 +1,4 @@
+syntax on
 set nocompatible
 
 filetype off
@@ -15,6 +16,9 @@ set noswapfile               " Don't use swapfile
 set nobackup                 " Don't create annoying backup files
 set splitright               " Split vertical windows right to the current windows
 set splitbelow               " Split horizontal windows below to the current windows
+
+" vim-afterflow colorschene -> https://github.com/danilo-augusto/vim-afterglow.git
+colorscheme afterglow
 
 " vim-go plugin -> https://github.com/fatih/vim-go
 " ==================== vim-go ====================
