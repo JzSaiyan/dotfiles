@@ -16,6 +16,11 @@ set noswapfile               " Don't use swapfile
 set nobackup                 " Don't create annoying backup files
 set splitright               " Split vertical windows right to the current windows
 set splitbelow               " Split horizontal windows below to the current windows
+set updatetime=100              " Update vim every 100ms
+
+" key mappings for easy navigation between splits
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " vim-afterflow colorscheme -> https://github.com/danilo-augusto/vim-afterglow.git
 colorscheme afterglow
