@@ -59,7 +59,7 @@ autocmd! VimEnter * NERDTree | wincmd w
 
 " vim-airline plugin -> https://github.com/vim-airline/vim-airline
 " ==================== vim-airline ====================
-let g:airline_theme='dark'
+let g:airline_theme='angr'
 
 " vim-fugitive plugin -> https://github.com/tpope/vim-fugitive
 " ==================== vim-fugitive ====================
