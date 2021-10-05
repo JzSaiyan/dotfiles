@@ -17,28 +17,18 @@ set nobackup                 " Don't create annoying backup files
 set splitright               " Split vertical windows right to the current windows
 set splitbelow               " Split horizontal windows below to the current windows
 set updatetime=100              " Update vim every 100ms
+set mouse=a
 
-" key mappings for easy navigation between splits
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" Clone and copy vim vundle
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-" vim-afterflow colorscheme -> https://github.com/danilo-augusto/vim-afterglow.git
-colorscheme afterglow
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" vim-go plugin -> https://github.com/fatih/vim-go
-" ==================== vim-go ====================
-
-" Run goimports along gofmt on each save
-let g:go_fmt_command = "goimports"
-
-" Automatically get signature/type info for object under cursor
-let g:go_auto_type_info = 1
-
-" Autocomplete prompt to appear automatically whenever press the dot (.)
-" au filetype go inoremap <buffer> . .<C-x><C-o>
-
-" NERDTree plugin -> https://github.com/preservim/nerdtree
-" ==================== NERDTree ====================
+Plugin 'preservim/nerdtree'
 
 " open a NERDTree automatically when vim starts up
 autocmd vimenter * NERDTree
@@ -57,9 +47,36 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " focus the right window on opening a file
 autocmd! VimEnter * NERDTree | wincmd w
 
-" vim-airline plugin -> https://github.com/vim-airline/vim-airline
-" ==================== vim-airline ====================
-let g:airline_theme='angr'
+Plugin 'fatih/vim-go'
 
-" vim-fugitive plugin -> https://github.com/tpope/vim-fugitive
-" ==================== vim-fugitive ====================
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+
+" Status line types/signatures
+let g:go_auto_type_info = 1
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+Plugin 'danilo-augusto/vim-afterglow'
+
+colorscheme dracula 
+
+Plugin 'vim-airline/vim-airline'
+
+let g:airline_theme='dracula'
+
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'tpope/vim-fugitive'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on    " required
